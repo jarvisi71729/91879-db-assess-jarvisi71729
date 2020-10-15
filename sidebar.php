@@ -34,4 +34,20 @@
                 
         </form>
     
+        <form method="post" action="location_search.php" enctype="multipart/form-data" >
+            
+                <select name="location">
+                    <option value="" disabled selected>Location...</option>
+                    
+                    <option value="Home">Home</option>
+                    <option value="Sushi Ya">Sushi Ya</option>
+                    <option value="St Pierres">St Pierres</option>
+                    <option value="Tascas">Tascas</option>
+                    <option value="Ephesus Turkish Kitchen">Ephesus Turkish Kitchen</option>
+                    
+                </select>
+
+            <input class="submit" type="submit" name="find_location" value="&#128269;" />
+                
+        </form>
     </div>
