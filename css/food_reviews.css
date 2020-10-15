@@ -1,0 +1,234 @@
+body {
+    margin: auto;
+    padding: 50px;
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    background: url(waves_2.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* ---- Set up site grid ---- */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 300px 2fr 400px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "logo banner banner"
+        "side main main"
+        "footer footer footer";
+    grid-gap: 8px;
+    
+}
+
+/* ---- End of grid setup ---- */
+
+
+/* -000- Area styling -000- */
+
+.box {
+    padding: 20px;
+    background-color: #ddd;
+    border-radius: 20px;
+    border: solid #fff 4px;
+}
+
+/* Area colouring... */
+
+/* logo, banner and footer background are the same */
+.logo, .banner, .footer {
+    background-color: #ad6989;  /* dark magenta */
+}
+
+/* Set font on dark areas to white */
+.logo, .banner, .side, .footer {
+    color: #fff;
+}
+
+/* Area specifics */
+
+.logo {
+    grid-area: logo;
+    padding: 0;
+    width: auto;
+    height: 176.69px;
+    background-color: #562349;  /* dark purple */
+    background-image: url(fish_logo_with_ocean.png);
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.side {
+    grid-area: side;
+    background-color: #ffa299;  /* peach pink */
+}
+
+.main {
+    grid-area: main;
+    background-color: #fee2b3;  /* pale yellow / cream */
+}
+
+
+.footer {
+    grid-area: footer;
+    text-align: right;
+}
+
+/* -000- End of area styling -000- */
+
+h1, h2, h3, h4 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Navigation Links */
+a.side{font-weight: bold; text-decoration: underline;}
+a.side:link, a.side:visited {color: #ad6989} /* pale turqoise */
+a.side:hover {color: #fff; text-decoration: none;} /* white */
+
+
+/* links in page */
+/*
+a {font-weight: bold;}
+a:link{color: #AA0000;}
+a:visited{color: #111177;}
+a:hover{color: #000;}
+*/
+
+/* Contact Form Styling */
+.contact {
+    width: 100%;
+}
+
+.center_image {
+    text-align: center;
+}
+
+/* Sub Heading Formatting */
+.sub_heading {
+    font-family: 'Ubuntu', sans-serif;
+    color: #593849; /* purple */
+    font-weight: bold;
+}
+
+/* Error Box Formatting */
+
+.error {
+    background-color: #ffe0ed; /* pale pink */
+    border: 2px solid #8a1737; /* dark red border */
+    color: #8a1737; /* dark red */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/*
+form {
+    width: 150px;
+    margin: 5px;
+}
+*/
+
+/*
+
+.search {
+    width: 150px;
+    padding: 8px 15px;
+    background: #fff;
+    border: 0px solid #000;
+}
+.submit {
+    font-family: FontAwesome;
+    position: relative;
+    width: 45px;
+    background-color: #fff;
+    color: #000;       
+    border: 1px solid #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+}
+
+input {
+    height: 50px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.half_width {
+    width: 99px;
+}
+
+select {
+    outline: 0;
+    height: 39px;
+    border: 1px solid #ccc;
+    color: #878787;
+    width: 200px;
+}
+
+/* Results Box Formatting */
+/*
+.results {
+    background-color: #fbead9;
+    border-radius: 10px;
+    border: solid #fff 1.5px;
+    padding: 10px;
+}
+*/
+
+
+.search {
+    width: 200px;
+    padding: 8px 15px;
+    background: #fff;
+    border: 0px solid #000;
+}
+form {
+    width: 250px;
+    margin: 5px;
+}
+
+.submit {
+    font-family: FontAwesome;
+    position: relative;
+    width: 45px;
+    left: -1px;
+    background-color: #fff;
+    color: #000;       
+    border: 1px solid #fff;
+    border-radius: 0 5px 5px 0;
+    font-size: 80%;
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+}
+
+input {
+    height: 39px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.half_width {
+    width: 99px;
+}
+
+select {
+    outline: 0;
+    height: 39px;
+    border: 1px solid #ccc;
+    color: #878787;
+    width: 200px;
+    padding: 8px 11px;
+}
