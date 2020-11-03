@@ -175,14 +175,12 @@ select {
 }
 
 /* Results Box Formatting */
-/*
 .results {
     background-color: #fbead9;
     border-radius: 10px;
     border: solid #fff 1.5px;
     padding: 10px;
 }
-*/
 
 
 .search {
@@ -204,7 +202,7 @@ form {
     background-color: #fff;
     color: #000;       
     border: 1px solid #fff;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 7px 7px 0;
     font-size: 80%;
 }
 

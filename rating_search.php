@@ -1,20 +1,42 @@
 <?php 
     include "head_nav.php";
 
-    $showall_sql="SELECT *
-    FROM `2020_L1_Assessment_Food_Reviews`
-    ORDER BY `2020_L1_Assessment_Food_Reviews`.`Name` ASC";
+// if find button pushed...
+if(isset($_POST['find_rating']))
     
-    $showall_query=mysqli_query($dbconnect, $showall_sql);
+{
+    
+$amount = $_POST['amount'];
+$stars = $_POST['stars'];
 
-    $showall_rs=mysqli_fetch_assoc($showall_query);
+if ($amount=="exactly")
+    
+{
+$find_sql="SELECT * FROM `2020_L1_Assessment_Food_Reviews` WHERE `Rating` =$stars
+                ORDER BY `2020_L1_Assessment_Food_Reviews`.`Name` ASC ";    
+}
 
-    $count=mysqli_num_rows($showall_query);
+elseif ($amount=="less")
+    
+{
+$find_sql="SELECT * FROM `2020_L1_Assessment_Food_Reviews` WHERE `Rating` <=$stars
+                ORDER BY `2020_L1_Assessment_Food_Reviews`.`Rating` DESC ";  
+}
+
+else {
+$find_sql="SELECT * FROM `2020_L1_Assessment_Food_Reviews` WHERE `Rating` >=$stars
+                ORDER BY `2020_L1_Assessment_Food_Reviews`.`Rating` ASC ";  
+}
+
+
+$find_query=mysqli_query($dbconnect, $find_sql);
+$find_rs=mysqli_fetch_assoc($find_query);
+$count=mysqli_num_rows($find_query);
 
 ?>
         <div class="box main">
             
-            <h2>All Items</h2>
+            <h2>Rating Search</h2>
             
             <?php
             
@@ -27,6 +49,7 @@
             ?>
                 
             <div class="error">
+                
                 Sorry, we couldn't find any matches. Please use the search box in the sidebar to try again.
                 
             </div>
@@ -43,22 +66,22 @@
                     
                 ?>
             
-                        <!-- Results go here -->
+            <!-- Results go here -->
             <div class="results">
                 
-                <p>Food: <span class="sub_heading"><?php echo $showall_rs['Name']; ?></span></p>
+                <p>Food: <span class="sub_heading"><?php echo $find_rs['Name']; ?></span></p>
                 
-                <p>Meal Time: <span class="sub_heading"><?php echo $showall_rs['Meal Time']; ?></span></p>
+                <p>Meal Time: <span class="sub_heading"><?php echo $find_rs['Meal Time']; ?></span></p>
                 
-                <p>Location: <span class="sub_heading"><?php echo $showall_rs['Location']; ?></span></p>
+                <p>Location: <span class="sub_heading"><?php echo $find_rs['Location']; ?></span></p>
                 
-                <p>Is this meal vegetarian friendly? <span class="sub_heading"><?php echo $showall_rs['Vegetarian']; ?></span></p>
+                <p>Is this meal vegetarian friendly? <span class="sub_heading"><?php echo $find_rs['Vegetarian']; ?></span></p>
 
                 <p>Rating: <span class="sub_heading">
                     
                     <?php 
                     
-                    for ($x=0; $x < $showall_rs['Rating']; $x++)
+                    for ($x=0; $x < $find_rs['Rating']; $x++)
                     
                     {
                         echo "&#9733;";
@@ -70,28 +93,34 @@
                 <p><span class="sub_heading">Review / Response</span></p>
                 
                 <p>
-                    <?php echo $showall_rs['Review']; ?>
+                    <?php echo $find_rs['Review']; ?>
                     
                 </p>
             
             </div> <!-- / end results -->
             
             <br />
-            
+             
             <?php
                     
                 } // end of 'do'
                 
-                while($showall_rs=mysqli_fetch_assoc($showall_query));
+                while($find_rs=mysqli_fetch_assoc($find_query));
                 
             } // end else
             
             // if there are results, display them
+    
+            } // end isset
             
             ?>
                 
         </div>    <!-- / main -->     
 
-<?php include "sidebar.php"; ?>
+<?php 
+    include "sidebar.php";
+?>
 
-<?php include "footer.php"; ?>
+<?php 
+    include "footer.php";
+?>
