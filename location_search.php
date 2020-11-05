@@ -7,9 +7,27 @@ if(isset($_POST['find_location']))
 
 $location=$_POST['location'];
 
+if ($location=="Home")
+    
+{
+    
 $find_sql="SELECT *
 FROM `2020_L1_Assessment_Food_Reviews`
-WHERE `Location` LIKE '%$location%' ";
+WHERE `Location` LIKE 'home' ORDER BY `2020_L1_Assessment_Food_Reviews`.`Name` ASC ";
+
+}
+    
+elseif ($location=="Away")
+
+{
+$find_sql="SELECT *
+FROM `2020_L1_Assessment_Food_Reviews`
+WHERE `Location` NOT LIKE 'home' ORDER BY `2020_L1_Assessment_Food_Reviews`.`Name` ASC ";
+    
+}
+    
+    
+
 $find_query=mysqli_query($dbconnect, $find_sql);
 $find_rs=mysqli_fetch_assoc($find_query);
 $count=mysqli_num_rows($find_query);
