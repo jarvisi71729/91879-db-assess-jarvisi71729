@@ -8,6 +8,10 @@
             
             </h2>
         
+            <i>Type part of the dish name if desired</i>
+        
+            <hr />
+        
         <form method="post" action="name_search.php" enctype="multipart/form-data" >
             
                 <input class="search" type="text" name="name" size="39" value="" required placeholder="Name of Food..." />
@@ -16,7 +20,9 @@
                 
             </form>
 
-            
+            <hr />
+        
+        <i>Use the dropdown menus to search by various filters</i>
             
         <form method="post" action="mealtime_search.php" enctype="multipart/form-data" >
             
@@ -40,10 +46,7 @@
                     <option value="" disabled selected>Location...</option>
                     
                     <option value="Home">Home</option>
-                    <option value="Sushi Ya">Sushi Ya</option>
-                    <option value="St Pierres">St Pierres</option>
-                    <option value="Tascas">Tascas</option>
-                    <option value="Ephesus Turkish Kitchen">Ephesus Turkish Kitchen</option>
+                    <option value="Away">Away</option>
                     
                 </select>
 
@@ -68,7 +71,7 @@
         <!-- Start of ratings form -->
             
             <form method="post" action="rating_search.php" enctype="multipart/form-data">
-
+                
                 <b>Rating...</b>
                 
                 <br />
@@ -90,6 +93,8 @@
                     <input type="submit" class="submit" name="find_rating" value="&#128269;" />            
             
             </form>
+        
+                <hr />
     
             <!-- End of ratings form -->
     </div>

@@ -18,7 +18,7 @@ $count=mysqli_num_rows($find_query);
 ?>
         <div class="box main">
             
-            <h2>Food Name Search</h2>
+            <h2>Vegetarian Search</h2>
             
             <?php
             
