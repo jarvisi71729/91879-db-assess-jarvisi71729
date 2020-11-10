@@ -26,7 +26,7 @@
             
         <form method="post" action="mealtime_search.php" enctype="multipart/form-data" >
             
-                <select name="meal">
+                <select name="meal" required>
                     <option value="" disabled selected>Meal Time...</option>
                     
                     <option value="Breakfast">Breakfast</option>
@@ -42,21 +42,15 @@
     
         <form method="post" action="location_search.php" enctype="multipart/form-data" >
             
-                <select name="location">
-                    <option value="" disabled selected>Location...</option>
-                    
-                    <option value="Home">Home</option>
-                    <option value="Away">Away</option>
-                    
-                </select>
-
-            <input class="submit" type="submit" name="find_location" value="&#128269;" />
+                <input class="search" type="text" name="location" size="39" value="" required placeholder="Name of Location..." />
                 
-        </form>
+                <input class="submit" type="submit" name="find_location" value="&#128269;"/>
+                
+            </form>
         
         <form method="post" action="vegetarian_search.php" enctype="multipart/form-data" >
             
-                <select name="vegetarian">
+                <select name="vegetarian" required>
                     <option value="" disabled selected>Vegetarian... (Y/N)</option>
                     
                     <option value="Yes">Yes</option>
@@ -77,8 +71,8 @@
                 <br />
                 
                 <select class="half_width" name="amount">
-                    <option value="exactly" selected>Exactly...</option>
-                    <option value="more">At least...</option>
+                    <option value="exactly">Exactly...</option>
+                    <option value="more" selected>At least...</option>
                     <option value="less">At most...</option>
                 </select>
                 
@@ -86,7 +80,7 @@
                     <option value=1>&#9733;</option>
                     <option value=2>&#9733;&#9733;</option>
                     <option value=3>&#9733;&#9733;&#9733;</option>
-                    <option value=4>&#9733;&#9733;&#9733;&#9733;</option>
+                    <option value=4 selected>&#9733;&#9733;&#9733;&#9733;</option>
                     <option value=5>&#9733;&#9733;&#9733;&#9733;&#9733;</option>
                 </select>
                 

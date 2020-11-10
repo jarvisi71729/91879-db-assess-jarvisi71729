@@ -1,33 +1,16 @@
-<?php include "head_nav.php";
+<?php 
+    include "head_nav.php";
 
 // if find button pushed...
 if(isset($_POST['find_location']))
     
 {
-
-$location=$_POST['location'];
-
-if ($location=="Home")
     
-{
-    
+$location = $_POST['location'];
+
 $find_sql="SELECT *
 FROM `2020_L1_Assessment_Food_Reviews`
-WHERE `Location` LIKE 'home' ORDER BY `2020_L1_Assessment_Food_Reviews`.`Name` ASC ";
-
-}
-    
-elseif ($location=="Away")
-
-{
-$find_sql="SELECT *
-FROM `2020_L1_Assessment_Food_Reviews`
-WHERE `Location` NOT LIKE 'home' ORDER BY `2020_L1_Assessment_Food_Reviews`.`Name` ASC ";
-    
-}
-    
-    
-
+WHERE `Location` LIKE '%$location%' ";
 $find_query=mysqli_query($dbconnect, $find_sql);
 $find_rs=mysqli_fetch_assoc($find_query);
 $count=mysqli_num_rows($find_query);
@@ -41,7 +24,7 @@ $count=mysqli_num_rows($find_query);
             
             // check if there are any results
             
-            if ($count<1)
+            if ($count < 1)
             
             {
                 
@@ -114,6 +97,10 @@ $count=mysqli_num_rows($find_query);
             ?>
                 
         </div>    <!-- / main -->     
-<?php include "sidebar.php"; ?>
+<?php 
+    include "sidebar.php";
+?>
 
-<?php include "footer.php"; ?>
+<?php 
+    include "footer.php";
+?>
